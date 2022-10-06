@@ -6,19 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".MainActivity">
-
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:src="@drawable/starbuzz"
-        android:contentDescription="@string/starbuzz_logo" />
+    tools:context=".Activity_Drink">
 
     <ListView
         android:id="@+id/list_options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/options"
+        android:entries="@array/options_dirnks"
         />
 
 </LinearLayout>

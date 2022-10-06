@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">ListViews</string>
+    <string name="starbuzz_logo">Starbuzz Logo</string>
+    <array name="options">
+        <item>1. Drinks</item>
+        <item>2. Food</item>
+        <item>3. Stores</item>
+    </array>
+    <string-array name="options_dirnks">
+        <item>1. Latte</item>
+        <item>2. Cappuccino</item>
+        <item>3. Filter</item>
+    </string-array>
 </resources>
