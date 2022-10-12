@@ -6,16 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
-
-    ListView list_options;
+public class DrinkCategoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_drink_category);
+
+        ArrayAdapter<Drink> listAdapter = new ArrayAdapter<Drink>(
+                this,
+                android.R.layout.simple_list_item_1,
+                Drink.dirnks);
+        ListView listDrinks = (ListView) findViewById(R.id.list_options);
+        listDrinks.setAdapter(listAdapter);
 
         AdapterView.OnItemClickListener itemClickListener =
                 new AdapterView.OnItemClickListener(){
@@ -23,13 +29,11 @@ public class MainActivity extends AppCompatActivity {
                                             View itemView,
                                             int position,
                                             long id) {
-                        if (position == 0) {
-                            Intent intent = new Intent(MainActivity.this, DrinkCategoryActivity.class);
+                            Intent intent = new Intent(DrinkCategoryActivity.this, Activity_Drink.class);
+                            intent.putExtra(Activity_Drink.EXTRA_DRINKID, (int) id);
                             startActivity(intent);
-                        }
                     }
                 };
-        ListView listView = (ListView) findViewById(R.id.list_options);
-        listView.setOnItemClickListener(itemClickListener);
+        listDrinks.setOnItemClickListener(itemClickListener);
     }
 }
